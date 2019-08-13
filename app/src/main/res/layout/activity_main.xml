@@ -14,17 +14,19 @@
         android:layout_gravity="center"
         app:srcCompat="@drawable/fib" />
 
-    <ScrollView
-        android:id="@+id/scrlView"
+    <TextView
+        android:id="@+id/txtShow"
         android:layout_width="match_parent"
-        android:layout_height="224dp">
+        android:layout_height="wrap_content"
+        android:text="Insert the number of terms you want to calculate" />
 
-        <LinearLayout
-            android:id="@+id/auxLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+    <EditText
+        android:id="@+id/nbrTrms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Number of Terms"
+        android:inputType="textPersonName" />
 
     <Button
         android:id="@+id/btnCalc"
