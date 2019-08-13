@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     Button calcBtn;
     List<Integer> numbers;
-    ScrollView scrlView;
     LinearLayout auxLayout;
 
     @Override
@@ -30,18 +29,19 @@ public class MainActivity extends AppCompatActivity {
         numbers.add(0);
         numbers.add(1);
 
-        //Inflate TxtView and Btn
-        scrlView = (ScrollView)findViewById(R.id.scrlView);
+        //Inflate Layout and Button
         auxLayout = (LinearLayout)findViewById(R.id.auxLayout);
         calcBtn = (Button)findViewById(R.id.btnCalc);
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Logic for FIB
                 int a = (int) numbers.get(numbers.size()-1);
                 int b = (int) numbers.get(numbers.size()-2);
                 int termInt = a+b;
                 numbers.add(termInt);
                 String term = Integer.toString(termInt);
+                //Logic to display the new calculated term
                 TextView displayText = new TextView(auxLayout.getContext());
                 displayText.setText(term);
                 auxLayout.addView(displayText);
