@@ -14,15 +14,22 @@
         android:layout_gravity="center"
         app:srcCompat="@drawable/fib" />
 
-    <TextView
-        android:id="@+id/textNum"
+    <ScrollView
+        android:id="@+id/scrlView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="0,1" />
+        android:layout_height="224dp">
+
+        <LinearLayout
+            android:id="@+id/auxLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
     <Button
         android:id="@+id/btnCalc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Calculate" />
+
 </LinearLayout>

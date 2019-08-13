@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -12,9 +14,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView displayText;
+
     Button calcBtn;
     List<Integer> numbers;
+    ScrollView scrlView;
+    LinearLayout auxLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,21 +31,20 @@ public class MainActivity extends AppCompatActivity {
         numbers.add(1);
 
         //Inflate TxtView and Btn
-        displayText = (TextView)findViewById(R.id.textNum);
+        scrlView = (ScrollView)findViewById(R.id.scrlView);
+        auxLayout = (LinearLayout)findViewById(R.id.auxLayout);
         calcBtn = (Button)findViewById(R.id.btnCalc);
-
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int a = (int) numbers.get(numbers.size()-1);
                 int b = (int) numbers.get(numbers.size()-2);
-                numbers.add(a+b);
-                String tmp = "[";
-                for(int i:numbers){
-                    tmp = tmp+i+",";
-                }
-                tmp = tmp+"]";
-                displayText.setText(tmp);
+                int termInt = a+b;
+                numbers.add(termInt);
+                String term = Integer.toString(termInt);
+                TextView displayText = new TextView(auxLayout.getContext());
+                displayText.setText(term);
+                auxLayout.addView(displayText);
             }
         });
     }
