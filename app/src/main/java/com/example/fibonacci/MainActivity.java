@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button calcBtn;
     Button cntBtn;
+    ImageButton imgBtn;
     EditText editText;
 
 
@@ -41,6 +43,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(cntBtn.getContext(), ShowCountriesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgBtn = (ImageButton)findViewById(R.id.imgBtn);
+        imgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(imgBtn.getContext(), ShowWebPageActivity.class);
+                intent.putExtra("link","https://es.wikipedia.org/wiki/Leonardo_de_Pisa");
                 startActivity(intent);
             }
         });
