@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button calcBtn;
+    Button cntBtn;
     EditText editText;
 
 
@@ -20,12 +21,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
         //Inflate Layout and Button
         editText = (EditText)findViewById(R.id.nbrTrms);
-        calcBtn = (Button)findViewById(R.id.btnCalc);
+        calcBtn = (Button)findViewById(R.id.cntBtn);
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
 
+            }
+        });
+
+        cntBtn = (Button)findViewById(R.id.cntBtn);
+        cntBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(cntBtn.getContext(), ShowCountriesActivity.class);
+                startActivity(intent);
             }
         });
     }
