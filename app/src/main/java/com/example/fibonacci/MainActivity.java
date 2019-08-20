@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -15,8 +16,10 @@ public class MainActivity extends AppCompatActivity {
 
     Button calcBtn;
     Button cntBtn;
+    Button fctBtn;
     ImageButton imgBtn;
     EditText editText;
+    Spinner spinner;
 
 
     @Override
@@ -25,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //Inflate Layout and Button
         editText = (EditText)findViewById(R.id.nbrTrms);
-        calcBtn = (Button)findViewById(R.id.cntBtn);
+        spinner = (Spinner)findViewById(R.id.spinner);
+        calcBtn = (Button)findViewById(R.id.fctBtn);
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -38,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cntBtn = (Button)findViewById(R.id.cntBtn);
+        cntBtn = (Button)findViewById(R.id.fctBtn);
         cntBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,5 +60,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        fctBtn = (Button)findViewById(R.id.fctBtn);
+        fctBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int fct = Integer.parseInt((String) spinner.getSelectedItem());
+                Intent intent = new Intent(fctBtn.getContext(),ShowFactorialActivity.class);
+                intent.putExtra("fct",fct);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ShowWebPageActivity"></activity>
+        <activity android:name=".ShowFactorialActivity"></activity>
+        <activity android:name=".ShowWebPageActivity" />
         <activity android:name=".ShowCountryDetails" />
         <activity android:name=".ShowCountriesActivity" />
         <activity android:name=".ShowTermsActivity" />
