@@ -18,12 +18,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:paddingTop="170dp" />
+        android:layout_marginTop="170dp"
+        android:text="Prueba" />
 
     <TextView
         android:id="@+id/rstTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:paddingTop="190dp" />
+        android:layout_marginTop="190dp"
+        android:text="Probando" />
 </FrameLayout>
