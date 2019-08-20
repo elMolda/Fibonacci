@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         //Inflate Layout and Button
         editText = (EditText)findViewById(R.id.nbrTrms);
         spinner = (Spinner)findViewById(R.id.spinner);
-        calcBtn = (Button)findViewById(R.id.fctBtn);
+        calcBtn = (Button)findViewById(R.id.btnCalc);
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        cntBtn = (Button)findViewById(R.id.fctBtn);
+        cntBtn = (Button)findViewById(R.id.cntBtn);
         cntBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
